@@ -1,2 +1,1 @@
-# KokoaTalk-clone
-with Nomad Corders
+# kokoa-clone

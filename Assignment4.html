@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>코코아클론:Assignment 4</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <!-- <link
+    rel="shortcut icon"
+    sizes="16x16 32x32 64x64"
+    href="https://nomadcoders.co/m.png"
+  /> -->
+  </head>
+
+  <body>
+    <header>
+      <h2>Create An Account</h2>
+    </header>
+    <main>
+      <form>
+        <div>
+          <label for="First name">First name</label>
+          <input
+            required
+            id="First name"
+            placeholder="First name"
+            type="text"
+          />
+        </div>
+        <div>
+          <label for="Last name">Last name</label>
+          <input id="Last name" required placeholder="Last name" type="text" />
+        </div>
+
+        <div>
+          <label for="Email">Email</label>
+          <input id="Email" required placeholder="Email" type="email" />
+        </div>
+
+        <div>
+          <label for="Username">Username</label>
+          <input id="Username" required placeholder="Username" type="text" />
+        </div>
+
+        <div>
+          <label for="Password">Password</label>
+          <input
+            id="Password"
+            required
+            placeholder="Password"
+            type="Password"
+            minlength="10"
+          />
+        </div>
+
+        <div>
+          <label for="Birth date">Birth date</label>
+          <input required id="Birth date" type="date" />
+        </div>
+
+        <div>
+          <label for="How happy are you?">How happy are you?</label>
+          <input
+            required
+            id="How happy are you?"
+            type="range"
+            list="tickmarks"
+          />
+          <datalist id="tickmarks">
+            <option value="0"></option>
+            <option value="10"></option>
+            <option value="20"></option>
+            <option value="30"></option>
+            <option value="40"></option>
+            <option value="50"></option>
+            <option value="60"></option>
+            <option value="70"></option>
+            <option value="80"></option>
+            <option value="90"></option>
+            <option value="100"></option>
+          </datalist>
+        </div>
+        <div>
+          <label for="What is fav. color?"
+            >What is fav. color?
+            <input required id="What is fav. color?" type="color" />
+          </label>
+        </div>
+        <div>
+          <input type="submit" value="Create Account" />
+        </div>
+      </form>
+    </main>
+    <footer></footer>
+  </body>
+</html>
+
+<!-- <form>
+label에서 for와 id 값을 동일하게 입력해주어야 함.  
+  <label for="Profile">Profile Photo</label> <br />
+
+  <input id="Profile" type="file" accept=".png,.pdf" /><br />
+  <input required placeholder="Name" type="text" /><br />
+  <input required placeholder="Last Name" type="text" /><br />
+  <input disabled placeholder="Username" type="text" /><br />
+  <input
+    required
+    placeholder="Password"
+    minlength="5"
+    type="password"
+  /><br />
+  <input type="submit" value="Create account" />
+
+  <p>
+    log<sub>2</sub>5 and <span>2<sup>5</sup></span>
+  </p>
+  <div>
+    <label for="website">Website</label>
+    <input id="website" required placeholder="Name" type="date" />
+  </div>
+  <div>
+    <label for="website">Website</label>
+    <input id="website" required placeholder="Name" type="date" />
+  </div>
+  <input type="submit" value="Create account" />
+id : element당 하나의 id만 가질 수 있는 게 id의 규칙 !! => Unique
+</form>
+block 과 inline 차이점 이해!  -->

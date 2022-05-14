@@ -1,0 +1,45 @@
+  body {
+    background-color : rgb(255, 112, 77);  
+    
+  }
+  
+  main {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+ }
+
+  div {
+    width:40vh;
+    height:40vh;
+    background-color: rgb(255, 230, 179);
+    border-width: 3px;
+    border-color: black;
+    border-style: groove;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  div div {
+      background-color: rgb(0, 153, 153);
+      margin: 9px;
+  }
+
+  .smail {
+    border: solid;
+    border-color: white;
+    border-width: 4px;
+    width: 8vh;
+    height: 8vh;
+  }
+
+  #big {
+    border: dashed;
+    width: 200px;
+    height: 8vh;
+    border-color: white;
+    border-width: 3.5px;
+  }

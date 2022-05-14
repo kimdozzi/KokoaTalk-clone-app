@@ -9,33 +9,38 @@
       main {
         height: 100vh;
         background-color: yellowgreen;
+
+        /* 마진이나 패딩이 적용되지 않은 부모 요소가 있고
+          그 부모 요소 안에 마진이 있는 자식이 있다.
+          이게 마진을 겹치게 만들고 
+          실제로는 자식 요소안에 있는 마진을 부모 요소에
+          적용하는 것.
+      
+          해결하는 방법은 부모 요소에 자식 요소로 인해 생긴 공간만큼
+          마진을 준다 => 부모의 마진을 추가 ! */
         padding: 10px;
+
         border-radius: 5px;
         display: flex;
+
+        /* justiy-content : 주축 
+          align-items : 교차축 */
         justify-content: space-evenly;
-        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
         align-items: center;
+
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
         flex-wrap: wrap;
       }
-      /* justiy-content : 주축 (가로)
-   align-items : 교차축(세로) 
-   
-   주축과 교차축이 무조건 가로, 세로는 아니다. 변경가능
-   
-   
-   flex container 자식이라면 flex 중복 선언이 가능하다.
-   즉, 자식 선택자에게도 displasy : flex를 줄 수 있다.
 
-   Width and height have an effect in blocks = True
-   Width and height have an effect on inlines = False
-   */
-
-      .a {  
+      .a {
         font-size: large;
         margin: 0 5px;
         background-color: beige;
         width: 150px;
         height: 150px;
+
+        /* flex container 자식이라면 flex 중복 선언이 가능하다.
+              즉, 자식 선택자에게도 displasy : flex를 줄 수 있다. */
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -50,6 +55,8 @@
   </head>
   <body>
     <main>
+      <!-- Width and height have an effect in blocks = True
+      Width and height have an effect on inlines = False -->
       <div class="a">3</div>
       <div class="b"></div>
       <div class="a">5</div>
@@ -59,9 +66,9 @@
   </body>
 </html>
 
-<!-- inline tag는 수직으로 여백을 줄 수 없다. 수평만 가능!!! 
-    그래서 앵커 태그를 두 개 연속으로 두면 줄 바꿈없이 연속적으로 나타난다.
-
+<!-- 
 display : inline-block; 
-인라인과 블록의 두가지 역할을 모두 함. 한 줄에 표시되고, 위,아래,좌,우 공백을 모두 둘 수 있음 이는 다른 요소와의 거리에 영향을 미침. 이렇게 하면 인라인 요소에 공간을 할당할 수 있다 
- -->
+인라인과 블록의 두가지 역할을 모두 함.
+ 한 줄에 표시되고, 위,아래,좌,우 공백을 모두 둘 수 있음 이는 다른 요소와의 거리에 영향을 미침. 
+ 이렇게 하면 인라인 요소에 공간을 할당할 수 있다  
+-->

@@ -1,0 +1,59 @@
+header {
+    margin-bottom: 60px;
+    text-align: center;
+    font-size: 30px;
+}
+
+body {
+    margin:0 auto;
+    height: 700px;
+    width: 700px;
+    background-color: whitesmoke;
+    
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: whi;
+}
+
+ main > div {
+    margin: 12px;
+    width: 300px;
+    height: 450px;
+    border:10px solid white;
+    
+}
+
+.selector {
+    position: relative;
+}
+.selector:nth-child(1) {
+    background-color: tomato;
+}
+.selector:nth-child(2) {
+    background-color: teal;
+}
+.selector:nth-child(3) {
+    background-color: burlywood;
+}
+.selector:nth-child(4) {
+    background-color: thistle;
+}
+
+.child-selector {
+    background-color: white;
+    position:absolute;
+    top:25px;
+    width: 40vh;
+    height: 20vh;
+    font-size: 20px;
+    font-weight: bold;
+}
+.child-selector > h2 {
+    margin-bottom: 40px;
+}

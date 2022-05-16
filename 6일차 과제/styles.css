@@ -29,15 +29,13 @@
   }
 
   .smail {
-    border: solid;
-    border-color: white;
-    border-width: 4px;
+    border: 3px solid white;
     width: 8vh;
     height: 8vh;
   }
 
   #big {
-    border: dashed;
+    border-style: dashed;
     width: 200px;
     height: 8vh;
     border-color: white;

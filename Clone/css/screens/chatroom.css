@@ -1,0 +1,221 @@
+#chat-screen {
+    background-color: #abc1d1;
+    height: 300vh;
+
+}
+
+#chat-screen .status-bar,
+#chat-screen .alt-header {
+    top:0;
+    position: fixed;
+    width: 100%;
+    background-color: #abc1d1;
+    box-sizing: border-box;
+}
+
+/* z-index : div가 있는 위치가 맨 앞에서부터 몇번째인지 나타냄.
+즉, layer의 순서가 몇 번째인지 나타낸다.
+*/
+
+#chat-screen .status-bar {
+    z-index: 2;
+}
+
+#chat-screen .alt-header {
+    z-index: 1;
+}
+
+/* 
+    어떤 요소를 고정하면 이전의 box들과는 다른 layer가 된다.
+    이제 main chat과 달리, header와 status bar는 같은 layer가 아니다.
+    
+    다시말해서 status bar와 header는 main영역을 덮고 있는 상태
+    */
+
+@keyframes fadeIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: none;
+        opacity: 1;
+    }
+
+}
+
+ .main-chat {
+    margin-top: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+}
+/* .chat__timestamp  */
+.main-chat {
+    animation: fadeIn 0.6s linear;
+}
+
+
+.chat__timestamp {
+    color: white;
+    background-color: #92a4b2;
+    padding: 10px 15px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+}
+
+
+.message-row {
+    width: 100%;
+    display: flex;
+    margin-bottom: 25px;
+
+}
+
+.message-row img {
+    width: 50px;
+    height: 50px;
+    border-radius: 40%;
+   margin-right: 15px;
+}
+
+.message__author {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.message__bubble {
+    background-color: white;
+    padding: 13px;
+    font-size: 18px;
+    border-radius: 15px;
+    border-top-left-radius: 0px;
+    margin-right: 5px;
+}
+
+.message__time,
+.message__author {
+    opacity: 0.8;
+    font-size: 15px;
+}
+
+.message__info {
+    display: flex;
+    align-items: flex-end;
+}
+
+.message-row--own {
+    justify-content: flex-end;
+    
+}
+.message-row--own .message__bubble {
+    background-color: var(--yellow);
+    border-top-right-radius: 0px;
+    border-top-left-radius: 15px;
+    margin-right: 0px;
+    margin-left: 5px;
+}
+
+/* 
+메세지와 시간 순서를 변경하는 방법 1.
+.message-row--own .message__bubble {
+    order는 only flex children에게만 적용된다.
+    order: 1;
+}
+
+.message-row--own .message__time {
+    order: 0;
+} */
+
+
+
+/* 메세지와 시간 순서를 변경하는 방법 2. */
+.message-row--own .message__info {
+    flex-direction: row-reverse;
+}
+
+.reply {
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 25px;
+    box-sizing: border-box;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.reply .reply__column:first-child {
+    width: 10%;
+}
+
+.reply .reply__column:last-child {
+    width: 90%;
+    position: relative;
+}
+
+.reply i {
+    opacity: 0.5;
+}
+
+.reply input {
+    height: 30px;
+    width: 100%;
+    border: var(--main-border);
+    border-radius: 20px;
+    transition: all .3s ease-in-out;
+}
+
+.reply__column:last-child > i, 
+.reply__column:last-child button {
+    position:absolute;
+    right: -3px;
+    top: 2px;
+}
+
+.reply__column:last-child > i {
+    right: 40px;
+    top:10px;
+}
+
+.reply__column button {
+    background-color: var(--yellow);
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.reply__column button i {
+    opacity: 1;
+}
+
+.reply__column button:focus,
+.reply__column button:active {
+    outline: none;
+}
+
+.reply .reply__column:first-child,
+.reply .fa-smile-wink,
+.reply button {
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* reply 내부에 어떤 element가 focus되어 있다면 */
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-smile-wink,
+.reply:focus-within button {
+    opacity: 0;
+}
+
+.reply:focus-within input {
+    width: 98vw;
+    transform: translateX(-13%) translateY(-80px);
+}
+
+.reply:focus-within {
+    transform: translateY(80px);
+}

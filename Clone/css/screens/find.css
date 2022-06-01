@@ -88,6 +88,7 @@
 
 }
 
+
 .open-post__heart-count {
     background-color: rgba(0,0,0,0.5);
     color: white;
@@ -101,6 +102,26 @@
     font-size: 12px;
 }
 
+
 .open-post__heart-count span {
     margin-left: 3px;
+}
+
+@keyframes heartbeat{
+    0%{
+        color:white;
+        transform: none;
+    }
+    50%{
+        color: tomato;
+        transform: scale(3);
+    }
+    100%{
+        color:white;
+        transform: none;
+    }
+}
+
+.open-post__heart-count:hover i {
+    animation: heartbeat 0.5s linear infinite;
 }
